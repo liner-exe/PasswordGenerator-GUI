@@ -28,8 +28,6 @@ class App(ctk.CTk):
         
         self.check_boxes = ctk.CTkFrame(self,
                                         fg_color=('#ffffff', '#323332'), bg_color=('#ffffff', '#323332'))
-        self.check_boxes.columnconfigure(all([0, 1]), minsize=40, weight=1)
-        self.check_boxes.rowconfigure(all([i for i in range(8)]), minsize=20)
         self.check_boxes.pack(fill='both', side='top', expand=True)
 
         self.password = ctk.CTkEntry(self.check_boxes, width=600, font=(fontname, 24))
