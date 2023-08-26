@@ -4,7 +4,7 @@ Password Generator with graphical interface on custom tkinter
 <br><br>
 
 ## Updates
-And updates won`t be regular.
+Updates won`t be regular.
 <br><br>
 
 ## ⚙️ Compatibility
