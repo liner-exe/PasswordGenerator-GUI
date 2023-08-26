@@ -14,7 +14,7 @@ class App(ctk.CTk):
         # ------------------------------------------- APP SETTINGS ------------------------------------------------- #
         platform_name = platform.system()
 
-        self.title(f'Password Generator v1.0 | for {platform_name}')
+        self.title(f'Password Generator v1.1 | for {platform_name}')
         self._set_appearance_mode('dark')
         ctk.set_default_color_theme('green')
         self.geometry('1070x640+200+200')
