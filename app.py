@@ -17,14 +17,13 @@ class App(ctk.CTk):
         self.title(f'Password Generator v1.0 | for {platform_name}')
         self._set_appearance_mode('dark')
         ctk.set_default_color_theme('green')
-        self.geometry('800x400')
+        self.geometry('1070x640+200+200')
+        self.minsize(1070, 640)
+        ctk.set_widget_scaling(2.0)
 
         fontname = 'Arial'
         if platform.system() == 'Linux':
             fontname = 'ubuntu'
-
-        elif platform.system() == 'Windows':
-            self.wm_iconbitmap('icon.ico')
 
         # ------------------------------------------- PASSWORD FRAME ------------------------------------------------ #
 
@@ -63,19 +62,19 @@ class App(ctk.CTk):
         self.switches.pack(fill='both', side='left', expand=True)
 
         self.digits = ctk.CTkSwitch(self.switches, width=50, height=20, switch_width=40, switch_height=20,
-                                    text="Digits", font=(fontname, 20))
+                                    text="digits", font=(fontname, 20))
         self.digits.grid(row=0, column=0, pady=5, padx=10, sticky='W')
 
         self.lowers = ctk.CTkSwitch(self.switches, width=50, height=20, switch_width=40, switch_height=20,
-                                    text="Lowercase", font=(fontname, 20))
+                                    text="lowercase", font=(fontname, 20))
         self.lowers.grid(row=1, column=0, pady=5, padx=10, sticky='W')
 
         self.uppers = ctk.CTkSwitch(self.switches, width=50, height=20, switch_width=40, switch_height=20,
-                                    text="Uppercase", font=(fontname, 20))
+                                    text="uppercase", font=(fontname, 20))
         self.uppers.grid(row=2, column=0, pady=5, padx=10, sticky='W')
 
         self.punctuation = ctk.CTkSwitch(self.switches, width=50, height=20, switch_width=40, switch_height=20,
-                                         text="Punctuation", font=(fontname, 20))
+                                         text="punctuation", font=(fontname, 20))
         self.punctuation.grid(row=3, column=0, pady=5, padx=10, sticky='W')
 
         # -------------------------------------------- SETTINGS ----------------------------------------------------- #
@@ -85,6 +84,11 @@ class App(ctk.CTk):
 
         self.settings_button = ctk.CTkButton(self.settings_frame, text='SETTINGS', command=self.open_settings)
         self.settings_button.pack(padx=10, pady=10, anchor='center')
+
+        # -------------------------------------------- ABOUT -------------------------------------------------------- #
+
+        self.about_button = ctk.CTkButton(self.settings_frame, text='ABOUT', command=self.open_about)
+        self.about_button.pack(padx=10, pady=10, anchor='center')
 
     # ---------------------------------------------- FUNCTIONS -----------------------------------------------------#
 
@@ -124,7 +128,7 @@ class App(ctk.CTk):
     @staticmethod
     def open_error_window(error_text: str):
         error_window1 = ctk.CTkToplevel()
-        error_window1.geometry('400x200+0+0')
+        error_window1.geometry('700x400+0+0')
         error_window1.title('ERROR')
         label = ctk.CTkLabel(error_window1, text=error_text, text_color='red',
                              font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
@@ -135,7 +139,7 @@ class App(ctk.CTk):
     @staticmethod
     def open_settings():
         settings = ctk.CTkToplevel()
-        settings.geometry('500x500')
+        settings.geometry('880x800+0+0')
 
         customization = ctk.CTkFrame(settings)
         customization.pack(padx=20, pady=20, side='top', fill='both', expand=True)
@@ -175,10 +179,31 @@ class App(ctk.CTk):
         amode_dropdown.set('system')
         amode_dropdown.grid()
 
-        hint = ctk.CTkLabel(customization, text='Hint: Use same window and widget scale for better experience.')
+        hint = ctk.CTkLabel(customization, text='\n'.join(
+            ['Hint: Use same window and widget scale for better experience.',
+             '',
+             'Notice: '
+             'This options are experimental. Don`t use if you aren`t sure',
+             ' what you do.',
+             'It won`t be updated.'],
+        ))
         hint.grid()
 
         close_button = ctk.CTkButton(settings, text='CLOSE', command=settings.destroy)
+        close_button.pack(pady=30)
+
+    @staticmethod
+    def open_about():
+        about = ctk.CTkToplevel()
+        about.geometry('880x800+0+0')
+
+        about_frame = ctk.CTkFrame(about)
+        about_frame.pack(padx=20, pady=20, side='top', fill='both', expand=True)
+
+        about_label = ctk.CTkLabel(about_frame, text='Developer GitHub: r-liner')
+        about_label.grid()
+
+        close_button = ctk.CTkButton(about, text='CLOSE', command=about.destroy)
         close_button.pack(pady=30)
 
 
