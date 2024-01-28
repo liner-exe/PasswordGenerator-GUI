@@ -3,16 +3,12 @@
 Password Generator with graphical interface on custom tkinter
 <br><br>
 
-## Updates
-Updates won`t be regular.
-<br><br>
-
 ## Screenshots
 **Linux (v1.0)** <br>
-<img src='./images/screenshot_linux_v10.png' width=450 height=250 alt='screenshot-linux-v10'>
+<img src='./images/screenshot_linux_v10.png' width=536 height=336 alt='screenshot-linux-v10'>
 <br><br>
-**Windows (v1.0)** <br>
-<img src='./images/screenshot_win_v10.png' width=450 height=250 alt='screenshot-win-v10'>
+**Windows (v1.2)** <br>
+<img src='./images/screenshot_win_v12.png' width=536 height=336 alt='screenshot-win-v12'>
 <br><br>
 
 ## ⚙️ Compatibility

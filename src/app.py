@@ -1,6 +1,16 @@
 # ------------------------------------------------- IMPORTS --------------------------------------------------------- #
 
-import customtkinter as ctk
+
+try:
+    import customtkinter as ctk
+
+except:
+    import subprocess
+    subprocess.check_call(["pip3", "install", "customtkinter"])
+
+    import customtkinter as ctk
+
+
 import string
 import random
 import platform
@@ -14,7 +24,7 @@ class App(ctk.CTk):
         # ------------------------------------------- APP SETTINGS ------------------------------------------------- #
         platform_name = platform.system()
 
-        self.title(f'Password Generator v1.1 | for {platform_name}')
+        self.title(f'Password Generator v1.2 | for {platform_name}')
         self._set_appearance_mode('dark')
         ctk.set_default_color_theme('green')
         self.geometry('1070x640+200+200')
@@ -128,8 +138,10 @@ class App(ctk.CTk):
     @staticmethod
     def open_error_window(error_text: str):
         error_window1 = ctk.CTkToplevel()
-        error_window1.geometry('700x400+0+0')
         error_window1.title('ERROR')
+        error_window1.attributes('-topmost', True)
+        error_window1.geometry('700x400+0+0')
+
         label = ctk.CTkLabel(error_window1, text=error_text, text_color='red',
                              font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         label.pack()
@@ -139,6 +151,8 @@ class App(ctk.CTk):
     @staticmethod
     def open_settings():
         settings = ctk.CTkToplevel()
+        settings.title('Settings')
+        settings.attributes('-topmost', True)
         settings.geometry('880x800+0+0')
 
         customization = ctk.CTkFrame(settings)
@@ -195,6 +209,8 @@ class App(ctk.CTk):
     @staticmethod
     def open_about():
         about = ctk.CTkToplevel()
+        about.title('About')
+        about.attributes('-topmost', True)
         about.geometry('880x800+0+0')
 
         about_frame = ctk.CTkFrame(about)
