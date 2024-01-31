@@ -12,11 +12,11 @@ Password Generator with graphical interface on custom tkinter
 <br><br>
 
 ## ⚙️ Compatibility
-| **Operation System** | **Status** |
-| :---------: | :-----------: |
-| **Windows** | 🟢 Compatible |
-| **Linux** | 🟢 Compatible |
-| **MacOS** | 🟡 Not tested |
+| **Operation System** | **Status** | **Version**|
+| :---------: | :-----------: | :-----------: |
+| **Windows** | 🟢 Compatible | v1.2 |
+| **Linux** | 🟢 Compatible | v1.2 |
+| **MacOS** | 🟡 Not tested | x |
 
 <br><br>
 
