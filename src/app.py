@@ -24,7 +24,7 @@ class App(ctk.CTk):
         # ------------------------------------------- APP SETTINGS ------------------------------------------------- #
         platform_name = platform.system()
 
-        self.title(f'Password Generator v1.3')
+        self.title(f'Password Generator v1.3.1')
         self._set_appearance_mode('dark')
         ctk.set_default_color_theme('green')
         self.geometry('1070x640+200+200')
@@ -39,29 +39,23 @@ class App(ctk.CTk):
 
         self.password_frame = ctk.CTkFrame(self, fg_color=('#ffffff', '#323332'), bg_color=('#ffffff', '#323332'),
                                            corner_radius=0)
-        # self.password_frame.columnconfigure(all([0, 1]), minsize=40, weight=1)
-        # self.password_frame.rowconfigure(all([i for i in range(8)]), minsize=20)
         self.password_frame.pack(fill='both', side='top', expand=True)
 
         self.password = ctk.CTkEntry(self.password_frame, width=500, font=(fontname, 24))
         self.password.grid(row=0, column=0, columnspan=5, padx=10, pady=10, stick='we')
 
-        # self.length = ctk.CTkEntry(self.password_frame, 250, 30, placeholder_text="Enter password length",
-        #                            font=(fontname, 20))
-        # self.length.grid(row=1, column=0, columnspan=2, pady=10, sticky='s')
-
         self.password_lenght = 6
 
         password_label = ctk.CTkLabel(self.password_frame, text="Password Length")
-        password_label.grid(row=1, column=0, padx=10, sticky='e')
+        password_label.grid(row=1, column=0, padx=10, pady=10, sticky='e')
 
-        self.lenght = ctk.CTkSlider(self.password_frame, from_=6, to=30, variable=ctk.IntVar(value=self.password_lenght),
-                                    width=100,
-                                    number_of_steps=24, command=self.update_password_lenght)
-        self.lenght.grid(row=1, column=1, sticky='w')
+        self.lenght_slider = ctk.CTkSlider(self.password_frame, from_=6, to=30, variable=ctk.IntVar(value=self.password_lenght),
+                                           width=120,
+                                           number_of_steps=24, command=self.update_password_lenght)
+        self.lenght_slider.grid(row=1, column=1, columnspan=2, sticky='we', padx=10, pady=10)
 
         self.lenght_display = ctk.CTkLabel(self.password_frame, text=self.password_lenght)
-        self.lenght_display.grid(row=1, column=2, padx=0, pady=10, sticky='w')
+        self.lenght_display.grid(row=1, column=3, padx=(0,10), pady=10, sticky='w')
 
         # -------------------------------- BUTTONS (GENERATE, CLEAR, COPY) ------------------------------------------ #
 
@@ -237,7 +231,6 @@ class App(ctk.CTk):
 
     def update_password_lenght(self, value):
         value = int(value)
-        print(value)
         self.password_lenght = value
         self.lenght_display.configure(text=value)
 
