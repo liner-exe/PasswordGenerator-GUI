@@ -5,10 +5,18 @@ Password Generator with graphical interface on custom tkinter
 
 ## Screenshots
 **Linux (v1.0)** <br>
+
 <img src='./images/screenshot_linux_v10.png' width=536 height=336 alt='screenshot-linux-v10'>
 <br><br>
+
 **Windows (v1.2)** <br>
+
 <img src='./images/screenshot_win_v12.png' width=536 height=336 alt='screenshot-win-v12'>
+<br><br>
+
+**Windows (v1.3)**
+ <br>
+<img src='./images/screenshot_win_v13.png' width=536 height=336 alt='screenshot-win-v13'>
 <br><br>
 
 ## ⚙️ Compatibility
