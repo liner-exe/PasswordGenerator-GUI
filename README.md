@@ -14,9 +14,9 @@ Password Generator with graphical interface on custom tkinter
 <img src='./images/screenshot_win_v12.png' width=536 height=336 alt='screenshot-win-v12'>
 <br><br>
 
-**Windows (v1.3)**
+**Windows (v1.3.1)**
  <br>
-<img src='./images/screenshot_win_v13.png' width=536 height=336 alt='screenshot-win-v13'>
+<img src='./images/screenshot_win_v131.png' width=536 height=336 alt='screenshot-win-v131'>
 <br><br>
 
 ## ⚙️ Compatibility
