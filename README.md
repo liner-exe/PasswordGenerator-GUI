@@ -1,4 +1,4 @@
-# PasswordGenerator-GUI
+# PasswordGenerator-GUI (v1.3)
 ## ❓ About
 Password Generator with graphical interface on custom tkinter
 <br><br>
@@ -14,8 +14,8 @@ Password Generator with graphical interface on custom tkinter
 ## ⚙️ Compatibility
 | **Operation System** | **Status** | **Version**|
 | :---------: | :-----------: | :-----------: |
-| **Windows** | 🟢 Compatible | v1.2 |
-| **Linux** | 🟢 Compatible | v1.2 |
+| **Windows** | 🟢 Compatible | v1.3 |
+| **Linux** | 🟢 Compatible | v1.3 |
 | **MacOS** | 🟡 Not tested | x |
 
 <br><br>
