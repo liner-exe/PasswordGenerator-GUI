@@ -1,19 +1,25 @@
 # ------------------------------------------------- IMPORTS --------------------------------------------------------- #
 
-
 try:
     import customtkinter as ctk
-
-except:
+except ImportError:
     import subprocess
-    subprocess.check_call(["pip3", "install", "customtkinter"])
+    import sys
 
-    import customtkinter as ctk
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "customtkinter"])
+        import customtkinter as ctk
+    except subprocess.CalledProcessError:
+        print("Failed to install customtkinter. Please install it manually.")
+        sys.exit(1)
+    except ImportError:
+        print("customtkinter is not installed and installation failed. Please install it manually.")
+        sys.exit(1)
 
 
-import string
-import random
 import platform
+import random
+import string
 
 
 # ------------------------------------------------- APP CLASS ---------------------------------------------------- #
@@ -22,7 +28,6 @@ class App(ctk.CTk):
         super().__init__()
 
         # ------------------------------------------- APP SETTINGS ------------------------------------------------- #
-        platform_name = platform.system()
 
         self.title(f'Password Generator v1.3.1')
         self._set_appearance_mode('dark')
@@ -44,18 +49,19 @@ class App(ctk.CTk):
         self.password = ctk.CTkEntry(self.password_frame, width=500, font=(fontname, 24))
         self.password.grid(row=0, column=0, columnspan=5, padx=10, pady=10, stick='we')
 
-        self.password_lenght = 6
+        self.password_length = 6
 
         password_label = ctk.CTkLabel(self.password_frame, text="Password Length")
         password_label.grid(row=1, column=0, padx=10, pady=10, sticky='e')
 
-        self.lenght_slider = ctk.CTkSlider(self.password_frame, from_=6, to=30, variable=ctk.IntVar(value=self.password_lenght),
+        self.length_slider = ctk.CTkSlider(self.password_frame, from_=6, to=30,
+                                           variable=ctk.IntVar(value=self.password_length),
                                            width=120,
-                                           number_of_steps=24, command=self.update_password_lenght)
-        self.lenght_slider.grid(row=1, column=1, columnspan=2, sticky='we', padx=10, pady=10)
+                                           number_of_steps=24, command=self.update_password_length)
+        self.length_slider.grid(row=1, column=1, columnspan=2, sticky='we', padx=10, pady=10)
 
-        self.lenght_display = ctk.CTkLabel(self.password_frame, text=self.password_lenght)
-        self.lenght_display.grid(row=1, column=3, padx=(0,10), pady=10, sticky='w')
+        self.length_display = ctk.CTkLabel(self.password_frame, text=str(self.password_length), font=(fontname, 20))
+        self.length_display.grid(row=1, column=3, padx=(0, 10), pady=10, sticky='w')
 
         # -------------------------------- BUTTONS (GENERATE, CLEAR, COPY) ------------------------------------------ #
 
@@ -123,7 +129,7 @@ class App(ctk.CTk):
 
         try:
             password = ''
-            for i in range(int(self.password_lenght)):
+            for i in range(int(self.password_length)):
                 password += random.choice(symbols)
 
             self.password.insert(index=0, string=password)
@@ -229,11 +235,10 @@ class App(ctk.CTk):
         close_button = ctk.CTkButton(about, text='CLOSE', command=about.destroy)
         close_button.pack(pady=30)
 
-    def update_password_lenght(self, value):
+    def update_password_length(self, value):
         value = int(value)
-        self.password_lenght = value
-        self.lenght_display.configure(text=value)
-
+        self.password_length = value
+        self.length_display.configure(text=value)
 
 
 if __name__ == "__main__":
