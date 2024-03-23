@@ -1,4 +1,4 @@
-# PasswordGenerator-GUI (v1.3.1)
+# PasswordGenerator-GUI (v1.4.0)
 ## ❓ About
 Password Generator with graphical interface on custom tkinter
 <br><br>
