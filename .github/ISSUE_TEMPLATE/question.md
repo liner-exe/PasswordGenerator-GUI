@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Need help with running the bot?
+about: Need help with running the app?
 title: ''
 labels: question
 assignees: ''
@@ -19,7 +19,6 @@ If applicable, add screenshots to help explain your problem.
 
 - OS:
 - Python version:
-- disnake version:
 
 **Traceback**
 
