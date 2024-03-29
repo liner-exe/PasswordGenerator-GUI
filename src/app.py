@@ -38,6 +38,7 @@ class App(ctk.CTk):
         self.resolution_width = pyautogui.resolution().width
         self.resolution_height = pyautogui.resolution().height
 
+
         try:
             settings = configparser.ConfigParser()
             settings.read(f'{path}/settings.ini')
@@ -82,6 +83,12 @@ class App(ctk.CTk):
 
         self.settings = configparser.ConfigParser()
         self.settings.read(f'{path}/settings.ini')
+        self.title(f'Password Generator v1.4.0')
+        self._set_appearance_mode('dark')
+        ctk.set_default_color_theme('green')
+        self.geometry('1070x640+200+200')
+        self.minsize(1070, 640)
+        ctk.set_widget_scaling(2.0)
 
         fontname = 'Arial'
         if platform.system() == 'Linux':
