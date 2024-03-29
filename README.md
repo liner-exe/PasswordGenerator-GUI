@@ -1,9 +1,9 @@
-# PasswordGenerator-GUI (v1.4.0)
+# PasswordGenerator-GUI (v2.0.0)
 ## ❓ About
 Password Generator with graphical interface on custom tkinter
 <br><br>
 
-## Screenshots
+## 🖼️ Screenshots
 **Linux (v1.0)** <br>
 
 <img src='./images/screenshot_linux_v10.png' width=536 height=336 alt='screenshot-linux-v10'>
