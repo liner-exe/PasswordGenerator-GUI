@@ -88,7 +88,6 @@ class App(ctk.CTk):
         ctk.set_default_color_theme('green')
         self.geometry('1070x640+200+200')
         self.minsize(1070, 640)
-        ctk.set_widget_scaling(2.0)
 
         fontname = 'Arial'
         if platform.system() == 'Linux':
