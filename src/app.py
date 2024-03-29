@@ -24,7 +24,6 @@ import configparser
 import os
 import pyautogui
 import webbrowser
-from PIL import ImageTk
 from utils.i18n import Response
 
 path = os.path.dirname(os.path.realpath(__file__))
