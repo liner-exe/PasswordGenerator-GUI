@@ -22,8 +22,8 @@ Password Generator with graphical interface on custom tkinter
 ## ⚙️ Compatibility
 | **Operation System** | **Status** | **Version**|
 | :---------: | :-----------: | :-----------: |
-| **Windows** | 🟢 Compatible | v1.3.1 |
-| **Linux** | 🟢 Compatible | v1.3.1 |
+| **Windows** | 🟢 Compatible | v2.0.0 |
+| **Linux** | 🟡 Not tested | v2.0.0 |
 | **MacOS** | 🟡 Not tested | x |
 
 <br><br>
