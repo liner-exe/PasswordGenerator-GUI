@@ -1,7 +1,10 @@
 # PasswordGenerator-GUI (v2.0.0)
 ## ❓ About
-Password Generator with graphical interface on custom tkinter
-<br><br>
+**Password Generator** with graphical interface on *customtkinter*. <br>
+It`s basicaly project i made for fun. And as well for password generation purposes. <br>
+So you can contribute this, you can request new features.
+
+<br>
 
 ## 🖼️ Screenshots
 **Linux (v1.0)** <br>
@@ -17,8 +20,8 @@ Password Generator with graphical interface on custom tkinter
 ## ⚙️ Compatibility
 | **Operation System** | **Status** | **Version**|
 | :---------: | :-----------: | :-----------: |
-| **Windows** | 🟢 Compatible | v2.0.0 |
-| **Linux** | 🟡 Not tested | v2.0.0 |
+| **Windows** | 🟢 Compatible | v2.0.1 |
+| **Linux** | 🟡 Not tested | x |
 | **MacOS** | 🟡 Not tested | x |
 
 <br><br>
