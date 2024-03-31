@@ -1,8 +1,8 @@
 ---
-name: Question
+name: ❓ Question
 about: Need help with running the app?
 title: ''
-labels: question
+labels: ❓ question
 assignees: ''
 
 ---
