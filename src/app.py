@@ -76,7 +76,7 @@ class App(ctk.CTk):
 
         self.response = Response(f"{path}/i18n", settings['app']['locale'])
 
-        self.title(f'{self.response.get("app-title")} v2.0.0')
+        self.title(f'{self.response.get("app-title")} v2.0.1')
         self.iconbitmap(f'{path}/icon.ico')
 
         self.settings = configparser.ConfigParser()
@@ -257,7 +257,7 @@ class App(ctk.CTk):
 
         amode_dropdown = ctk.CTkComboBox(customization,
                                          values=['dark', 'white', 'system'],
-                                         command=lambda mode: lambda value: setattr(self, 'theme_color', value),
+                                         command=lambda value: setattr(self, 'theme_color', value),
                                          font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         
         amode_dropdown.set(self.theme_color)
