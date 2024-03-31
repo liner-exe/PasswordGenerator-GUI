@@ -76,7 +76,7 @@ class App(ctk.CTk):
 
         self.response = Response(f"{path}/i18n", settings['app']['locale'])
 
-        self.title(f'{self.response.get("app-title")} v2.0.0')
+        self.title(f'{self.response.get("app-title")} v2.0.1')
         self.iconbitmap(f'{path}/icon.ico')
 
         self.settings = configparser.ConfigParser()
