@@ -12,11 +12,6 @@ So you can contribute this, you can request new features.
 <img src='./images/screenshot_linux_v10.png' width=536 height=336 alt='screenshot-linux-v10'>
 <br><br>
 
-**Windows (v1.3.1)**
- <br>
-<img src='./images/screenshot_win_v131.png' width=536 height=336 alt='screenshot-win-v131'>
-<br><br>
-
 ## ⚙️ Compatibility
 | **Operation System** | **Status** | **Version**|
 | :---------: | :-----------: | :-----------: |
