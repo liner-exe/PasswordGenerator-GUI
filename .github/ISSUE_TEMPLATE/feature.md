@@ -1,8 +1,8 @@
 ---
-name: Feature request
+name: ✨ Feature request
 about: Create a feature request
 title: ''
-labels: :sparkles: feature
+labels: ✨ feature
 assignees: ''
 
 ---
