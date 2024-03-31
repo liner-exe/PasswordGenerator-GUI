@@ -1,4 +1,4 @@
-# PasswordGenerator-GUI (v2.0.0)
+# PasswordGenerator-GUI (v2.0.1)
 ## ❓ About
 **Password Generator** with graphical interface on *customtkinter*. <br>
 It`s basicaly project i made for fun. And as well for **password generation** purposes. <br>
