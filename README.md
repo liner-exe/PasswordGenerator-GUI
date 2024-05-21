@@ -17,9 +17,9 @@ So you can *contribute* this, you can *request new features*.
 <img src='./images/screenshot_win_v2-0-0_primary.png' width=642 height=376 alt='screenshot_win_v2-0-0_primary'>
 <br><br>
 
-**Windows 10 - Settings window (v2.0.0)** <br>
+**Windows 10 - Settings window (v2.2.0)** <br>
 
-<img src='./images/screenshot_win_v2-0-0_settings.png' width=451 height=419 alt='screenshot_win_v2-0-0_setting'>
+<img src='./images/screenshot_win_v2-2-0_settings.png' width=451 height=419 alt='screenshot_win_v2-0-0_setting'>
 <br><br>
 
 ## ⚙️ Compatibility
