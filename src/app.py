@@ -255,23 +255,31 @@ class App(ctk.CTk):
         amode_label = ctk.CTkLabel(customization, text=self.response.get("dropdown-theme-color"))
         amode_label.grid(row=4, column=0)
 
+        theme_dark = self.response.get("theme-dark")
+        theme_white = self.response.get("theme-white")
+        theme_system = self.response.get("theme-system")
+
         amode_dropdown = ctk.CTkComboBox(customization,
-                                         values=['dark', 'white', 'system'],
-                                         command=lambda value: setattr(self, 'theme_color', value),
+                                         values=[f'{theme_dark}', f'{theme_white}', f'{theme_system}'],
+                                         command=lambda value: self.switch_theme(value),
                                          font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         
-        amode_dropdown.set(self.theme_color)
+        amode_dropdown.set(self.theme_to_string(self.theme_color))
         amode_dropdown.grid(row=5, column=0)
 
         accent_label = ctk.CTkLabel(customization, text=self.response.get("dropdown-theme-accent"))
         accent_label.grid(row=0, column=1, padx=50)
 
+        theme_accent_green = self.response.get("theme-accent-green")
+        theme_accent_blue = self.response.get("theme-accent-blue")
+        theme_accent_dark_blue = self.response.get("theme-accent-dark-blue")
+
         accent_dropdown = ctk.CTkComboBox(customization,
-                                         values=['green', 'blue', 'dark-blue'],
-                                         command=lambda value: setattr(self, 'theme_accent', value),
+                                         values=[f'{theme_accent_green}', f'{theme_accent_blue}', f'{theme_accent_dark_blue}'],
+                                         command=lambda value: self.switch_accent(value),
                                          font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         
-        accent_dropdown.set(self.theme_accent)
+        accent_dropdown.set(self.accent_to_string(self.theme_accent))
         accent_dropdown.grid(row=1, column=1, padx=50)
 
         accent_label = ctk.CTkLabel(customization, text=self.response.get("dropdown-locale"))
@@ -307,6 +315,51 @@ class App(ctk.CTk):
         }
         
         return locales[locale]
+    
+    def switch_theme(self, theme):
+        dark = self.response.get("theme-dark")
+        white = self.response.get("theme-white")
+        system = self.response.get("theme-system")
+
+        themes = {
+            f'{dark}': 'dark',
+            f'{white}': 'white',
+            f'{system}' :'system'
+        }
+
+        self.theme_color = themes[theme]
+    
+    def theme_to_string(self, theme):
+        themes = {
+            'dark': f'{self.response.get("theme-dark")}',
+            'white': f'{self.response.get("theme-white")}',
+            'system': f'{self.response.get("theme-system")}'
+        }
+        
+        return themes[theme]
+    
+    def switch_accent(self, accent):
+        green = self.response.get("theme-accent-green")
+        blue = self.response.get("theme-accent-blue")
+        dark_blue = self.response.get("theme-accent-dark-blue")
+               
+
+        accents = {
+            f'{green}': 'green',
+            f'{blue}': 'blue',
+            f'{dark_blue}': 'dark-blue'
+        }
+
+        self.theme_accent = accents[accent]
+
+    def accent_to_string(self, accent):
+        accents = {
+            'green': f'{self.response.get("theme-accent-green")}',
+            'blue': f'{self.response.get("theme-accent-blue")}',
+            'dark-blue': f'{self.response.get("theme-accent-dark-blue")}'
+        }
+        
+        return accents[accent]
 
     def save_settings(self):
         config = configparser.ConfigParser()
