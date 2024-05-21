@@ -278,19 +278,35 @@ class App(ctk.CTk):
         accent_label.grid(row=2, column=1, padx=50)
 
         locale_dropdown = ctk.CTkComboBox(customization,
-                                         values=['en-us', 'ru-ru'],
-                                         command=lambda value: setattr(self, 'app_locale', value),
+                                         values=['English', 'Русский'],
+                                         command=lambda value: self.switch_locale(value),
                                          font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         
-        locale_dropdown.set(self.app_locale)
+        locale_dropdown.set(self.locale_to_string(self.app_locale))
         locale_dropdown.grid(row=3, column=1, padx=50)
 
         save_button = ctk.CTkButton(settings, text=self.response.get("button-save"), command=self.save_settings)
         save_button.place(x=50, y=300)
 
         close_button = ctk.CTkButton(settings, text=self.response.get("button-close"), command=settings.destroy)
-        close_button.place(x=210, y=300)                  
+        close_button.place(x=210, y=300)
 
+    def switch_locale(self, locale):
+        locales = {
+            'English': 'en-us',
+            'Русский': 'ru-ru'
+        }
+
+        self.app_locale = locales[locale]
+
+    @staticmethod
+    def locale_to_string(locale):
+        locales = {
+            'en-us': 'English',
+            'ru-ru': 'Русский'
+        }
+        
+        return locales[locale]
 
     def save_settings(self):
         config = configparser.ConfigParser()
