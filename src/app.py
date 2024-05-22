@@ -76,7 +76,7 @@ class App(ctk.CTk):
 
         self.response = Response(f"{path}/i18n", settings['app']['locale'])
 
-        self.title(f'{self.response.get("app-title")} v2.0.1')
+        self.title(f'{self.response.get("app-title")} v2.3.0')
         self.iconbitmap(f'{path}/icon.ico')
 
         self.settings = configparser.ConfigParser()
@@ -286,7 +286,7 @@ class App(ctk.CTk):
         accent_label.grid(row=2, column=1, padx=50)
 
         locale_dropdown = ctk.CTkComboBox(customization,
-                                         values=['English', 'Русский'],
+                                         values=['English', 'Русский', 'Français'],
                                          command=lambda value: self.switch_locale(value),
                                          font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
         
@@ -302,7 +302,8 @@ class App(ctk.CTk):
     def switch_locale(self, locale):
         locales = {
             'English': 'en-us',
-            'Русский': 'ru-ru'
+            'Русский': 'ru-ru',
+            'Français': 'fr-fr'
         }
 
         self.app_locale = locales[locale]
@@ -311,7 +312,8 @@ class App(ctk.CTk):
     def locale_to_string(locale):
         locales = {
             'en-us': 'English',
-            'ru-ru': 'Русский'
+            'ru-ru': 'Русский',
+            'fr-fr': 'Français'
         }
         
         return locales[locale]
@@ -385,7 +387,12 @@ class App(ctk.CTk):
         saved.after(1000, saved.destroy)
 
         saved_label_text = self.response.get("save-message")
-        saved_label = ctk.CTkLabel(saved, text=saved_label_text, font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
+
+        if self.app_locale == 'fr-fr':
+            saved_label = ctk.CTkLabel(saved, text=saved_label_text, font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 14))
+        else:
+            saved_label = ctk.CTkLabel(saved, text=saved_label_text, font=('ubuntu' if platform.system() == 'Linux' else 'Arial', 20))
+            
         saved_label.pack(padx=30)
 
     def open_about(self):
