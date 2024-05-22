@@ -25,7 +25,7 @@ So you can *contribute* this, you can *request new features*.
 ## ⚙️ Compatibility
 | **Operation System** | **Status** | **Version**|
 | :---------: | :-----------: | :-----------: |
-| **Windows** | 🟢 Compatible | v2.2.0 |
+| **Windows** | 🟢 Compatible | v2.3.0 |
 | **Linux** | 🟡 Not tested | x |
 | **MacOS** | 🟡 Not tested | x |
 
